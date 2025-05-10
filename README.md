@@ -1,58 +1,67 @@
-# Blockchain Demo
-A web-based demonstration of blockchain concepts.
+# 🌿 Weed420 Blockchain
 
+Weed420 is a culturally themed, Substrate-based blockchain designed around the ethos of decentralization, community governance, and timed token distribution. Built with Rust and Substrate, Weed420 leverages advanced blockchain features such as staking, DAO voting, and programmable on-chain logic.
 
+---
 
-This is a very basic visual introduction to the concepts behind a blockchain. We introduce 
-the idea of an immutable ledger using an interactive web demo that is available here:
+## 🚀 Project Overview
 
+- **Name:** Weed420
+- **Token:** $WEED
+- **Supply:** 4.2 Billion WEED
+- **Minting Mechanism:** Timed minting at **4:20 UTC**
+- **Governance:** On-chain DAO via Democracy pallet
+- **Consensus:** Nominated Proof-of-Stake (NPoS)
+- **Role Accounts:** Sudo (Root), Validators, Nominators
+- **Status:** Development / Testnet
 
-## Setup
-Get the code:
+---
 
-```
-git clone https://github.com/viralpatel380/Blockchain-Demo.git
-```
+## 🌐 Network Architecture
 
-Install dependencies:
+Weed420 is powered by a Substrate node that includes:
 
-```
-cd blockchain-demo
-npm install
-```
-Run the server:
+- **Custom Pallets:**
+  - `pallet-weed`: Controls timed minting and supply
+  - `pallet-rewards`: Manages block rewards at 4:20 UTC
+- **Native Token:** WEED
+- **Chain Spec:** Custom genesis config with pre-funded accounts and initial validators
 
-```
-npm start
-```
+---
 
-OR
+## 🧱 Key Features
 
-```
-./bin/www
-```
-#For windows: if the above command didn't work, use this (make sure you have Node.js installed in your system):
-```
-node ./bin/www      
-```
+| Feature                | Description |
+|------------------------|-------------|
+| 🕓 Timed Minting       | Blocks mined at 4:20 UTC have additional WEED rewards |
+| 👨‍🌾 Staking           | Users can stake WEED to become validators or nominate others |
+| 🗳️ DAO Governance     | Token holders can propose and vote on-chain changes |
+| 🔒 Sudo Access         | Root-level control during early stages of development |
+| 🧪 Testnet Ready       | Easily deployable local testnet for development and testing |
+| 📦 Docker Support      | Full containerized setup for easy deployment |
 
-Point a web browser at the demo:
+---
 
-```
-http://localhost:3000
-```
+## 🔧 Setup Instructions
 
-## Setup using Docker
+### 🛠️ Prerequisites
 
-Run the Docker setup:
+- [Rust & Cargo](https://rustup.rs/)
+- Node.js (for optional frontend explorer)
+- Docker & Docker Compose (for containerized setup)
+- Substrate CLI tools (`cargo install --force --locked substrate`)
 
-```
-cd blockchain-demo
-docker-compose up -d
-```
+---
 
-Point a web browser at the demo:
+### 💻 Run Locally (Native)
 
-```
-http://localhost:3000
-```
+```bash
+# Clone the repo
+git clone https://github.com/yourusername/weed420
+cd weed420
+
+# Build the node
+cargo build --release
+
+# Run the node
+./target/release/weed420-node --dev
