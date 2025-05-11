@@ -1,11 +1,39 @@
-extends layout
+//- extends layout
 
-block content
+//- block content
  
   
-  .container
-    h1 Blockchain Demo
+//-   .container
+//-     h1 Blockchain Demo
     
-    br
-    p.pull-right 
+//-     br
+//-     p.pull-right 
          
+
+
+extends layout
+
+h3#totalSupply 🌿 Total Mined: 0 / 4,200,000,000 WEED
+
+
+block content
+  h1 Demo Blockchain
+
+  form(method="POST", action="/add-block")
+    input(type="text", name="data", placeholder="Enter block data")
+    button(type="submit") Add Block
+
+  each block, index in chain
+    div(style="margin:20px; border:1px solid #ccc; padding:10px")
+      h3 Block #{index}
+      p Timestamp: #{new Date(block.timestamp).toLocaleString()}
+      p Data: #{block.data}
+      p Previous Hash: #{block.previousHash}
+      p Hash: #{block.hash}
+      input(type="hidden", id="block#{index}chain0timestamp", name="timestamp")
+p
+  span(id="block#{index}chain0reward") Reward:
+
+  button(type="button", onclick="mine(#{index}, 0, false)") Mine Block #{index}
+
+
