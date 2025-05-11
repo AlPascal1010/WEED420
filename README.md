@@ -57,7 +57,7 @@ Weed420 is powered by a Substrate node that includes:
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/weed420
+git clone https://github.com/AlPascal1010/weed420
 cd weed420
 
 # Build the node
